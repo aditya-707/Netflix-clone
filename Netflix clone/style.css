@@ -1,0 +1,531 @@
+/* Global*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    scroll-behavior: smooth;
+}
+a {
+    color: #ccc;
+}
+:root {
+    font-size: 62.5%;
+}
+body {
+    background: #000;
+    min-height: 500px;
+    max-height: 100vh;
+    width: 100%;
+    font-size: 1.6rem;
+    color: #fff;
+}
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #2d2d2d;
+    border-radius: 5rem;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #6c6c6c;
+    border-radius: 5rem;
+}
+
+/* Homepage */
+.homepage {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.homepage .hero {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url(./Images/netflix\ bg.jpg);
+    background-size: cover;
+    opacity: 30%;
+    background-attachment: fixed;
+}
+nav {
+    background: linear-gradient(rgba(0, 0, 0, 0.8) 25%, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    margin-top: -1.2rem;
+    width: 18rem;
+}
+.logo img {
+    width: 100%;
+}
+.nav-btn {
+    margin-right: 1.2rem;
+    margin-top: -1.2rem;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+.lang {
+    display: flex;
+    text-wrap: nowrap;
+    padding: 0.5rem 1.15rem;
+    border: 0.2px solid #999;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 0.4rem;
+    background: rgba(20, 20, 20, 0.7);
+}
+.signup-btn {
+    background-color: #e50914;
+    font-weight: 450;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.4rem;
+    transition: 0.3s;
+}
+.signup-btn:hover {
+    background-color: #b40710;
+}
+main {
+    position: absolute;
+    width: 50%;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 3rem;
+}
+main .text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+main .text h1 {
+    font-size: 5.4rem;
+    font-weight: 750;
+    text-wrap: balance;
+    line-height: 7rem;
+    margin-bottom: 1.5rem;
+}
+main .p1 {
+    font-size: 1.95rem;
+    font-weight: 600;
+}
+main .p2 {
+    margin-bottom: 1rem;
+}
+.add,
+.login-email {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.email {
+    width: 60%;
+    background: rgba(20, 20, 20, 0.7);
+    padding: 1.8rem 1rem;
+    border-radius: 0.5rem;
+    color: #bbb;
+    border: 1px solid #bbb;
+}
+.email::placeholder {
+    color: #bbb;
+}
+.started {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 35%;
+    background: #e50914;
+    padding: 1.4rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    gap: 2rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.started:hover {
+    background-color: #b40710;
+}
+input:focus{
+    box-shadow: 0 0 5px #ccc;
+}
+.movies hr {
+    height: 0.5rem;
+    background: linear-gradient(#e50914, #ec252f);
+    border: none;
+    margin-bottom: 5rem;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 50%);
+}
+
+/* Movies */
+.movies {
+    padding: 0 12rem;
+}
+.trending {
+    width: 100%;
+}
+.trending .tr {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.tr .tr-li {
+    border: 1px solid #ccc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    background: rgba(20, 20, 20, 0.7);
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+}
+.tr .tr-li:hover {
+    background: rgba(40, 40, 40, 0.7);
+}
+.movies-li-container {
+    position: relative;
+}
+.movies-li-container .angle {
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    padding: 0 0.6rem;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+.movies-li {
+    display: flex;
+    gap: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding: 0 2.5rem;
+    position: relative;
+    z-index: 1000;
+}
+.movies-li::-webkit-scrollbar {
+    width: 0;
+}
+.names {
+    height: 20rem;
+    min-width: 18rem;
+    background-size: cover;
+    background-position-y: center;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.names:hover {
+    scale: 1.05;
+}
+.names:nth-child(1) {
+    background-image: url(./Images/Bhool\ Bhulaiyaa\ 3.jpeg);
+}
+.names:nth-child(2) {
+    background-image: url(./Images/Lucky\ Bhaskar.jpeg);
+}
+.names:nth-child(3) {
+    background-image: url(./Images/Deadpool\ 3.jpeg);
+}
+.names:nth-child(4) {
+    background-image: url(./Images/Glory.jpeg);
+}
+.names:nth-child(5) {
+    background-image: url(./Images/squid\ game\ 2.jpg);
+}
+.names:nth-child(6) {
+    background-image: url(./Images/Night\ agent.jpg);
+}
+.names:nth-child(7) {
+    background-image: url(./Images/kitty.jpg);
+}
+.names:nth-child(8) {
+    background-image: url(./Images/mismatched.jpg);
+}
+.names:nth-child(9) {
+    background-image: url(./Images/black\ warrant.jpg);
+}
+.names p {
+    position: absolute;
+    left: -2rem;
+    bottom: 0;
+    font-size: 6em;
+    font-weight: 700;
+    color: black;
+    -webkit-text-stroke: 2px white;
+    background: black;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Reasons for joining - Advantages */
+.reason {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.cards {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 2rem;
+}
+.card {
+    padding: 2.4rem;
+    height: 25rem;
+    border-radius: 1em;
+    background: linear-gradient(135deg, #1b2145, #230e17);
+    position: relative;
+}
+.card p {
+    opacity: 0.9;
+    font-weight: 450;
+}
+.card img {
+    height: 5em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    margin: 1rem;
+}
+
+/* FAQ section */
+.questions {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 0 12rem;
+}
+.questions h2 {
+    margin-bottom: 2rem;
+}
+.questions .que {
+    margin-top: 0.8rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-color: #2d2d2d;
+    font-size: 2.4rem;
+    transition: 0.3s ease-in-out;
+}
+.questions .que:hover {
+    background-color: #353535;
+}
+
+/* Footer Section */
+.footer {
+    padding: 0 12rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8rem;
+}
+.footer .add {
+    margin-bottom: 4rem;
+}
+.links {
+    margin-top: 2rem;
+    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.ot-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+.so {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.so a{
+    transition: .3s ease;
+}
+.links a:hover{
+    color: #fff;
+}
+.para {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 420;
+    opacity: 0.9;
+    margin-top: 4rem;
+}
+
+/* Media Queries */
+/* Laptop Screen */
+@media screen and (max-width: 1150px) {
+    nav {
+        padding: 0 7rem;
+    }
+    main .text h1 {
+        font-size: 3.7rem;
+        font-weight: 630;
+        line-height: 5rem;
+        margin-bottom: 0.8rem;
+    }
+    main .p1 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 0rem;
+    }
+    main .p2 {
+        text-wrap: nowrap;
+    }
+    .login-email .started {
+        width: 35%;
+        padding: 1.4rem 2rem;
+        font-size: 1.6rem;
+        gap: 2rem;
+        font-weight: 500;
+        text-wrap: nowrap;
+    }
+}
+/* Tablet Screen */
+@media screen and (max-width: 960px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+    .questions .que {
+        font-size: 1.8rem;
+    }
+    .card p {
+        margin-top: 1rem;
+        font-weight: 400;
+    }
+    .logo {
+        width: 12rem;
+        margin-top: 0;
+    }
+    .nav-btn {
+        margin-top: 0;
+    }
+    main {
+        top: 50%;
+    }
+    main .text h1 {
+        font-size: 3rem;
+        line-height: 3.8rem;
+        text-wrap: wrap;
+    }
+    main .p2 {
+        margin-top: -1rem;
+        text-wrap: wrap;
+    }
+    .login-email .started {
+        font-weight: 400;
+    }
+    .trending .tr {
+        flex-direction: column;
+    }
+    .tr .tr-li {
+        width: 100%;
+    }
+    .footer,
+    .movies,
+    .questions,
+    nav {
+        padding: 0 2rem;
+    }
+}
+@media screen and (max-width: 855px) {
+    .card {
+        height: 20rem;
+    }
+    main {
+        width: 50rem;
+    }
+    .add {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+    .add .email {
+        width: 90%;
+    }
+    .add .started {
+        font-weight: 400;
+        font-size: 1.6rem;
+        padding: 1.2rem;
+        width: 60%;
+    }
+}
+/* Mobile Devices */
+@media screen and (max-width: 590px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+    main {
+        width: 90%;
+    }
+    .login-email {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .login-email .email {
+        width: 100%;
+        border: none;
+        outline: auto;
+    }
+    .lang {
+        padding: 0.9rem 1.2rem;
+    }
+    .lang p {
+        display: none;
+    }
+    .started {
+        padding: 0.7rem 1rem;
+        min-width: 55%;
+    }
+}
+@media screen and (max-width: 330px) {
+    .lang {
+        display: none;
+    }
+}
+@media (max-width: 728px) {
+    .floating-started {
+        position: fixed;
+        bottom: 20px;
+        left: 5%;
+        width: 90%;
+        padding: 15px 10px;
+        background-color: #e50914;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        cursor: pointer;
+        display: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .floating-started:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+        background-color: #d40812;
+    }
+}
