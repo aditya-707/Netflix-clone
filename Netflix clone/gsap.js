@@ -1,11 +1,11 @@
 let tl = gsap.timeline();
 
 tl.from(".logo", {
-    y: -30,   // Reduced movement
+    y: -30,
     opacity: 0,
-    duration: 1.2,  // Shorter duration
+    duration: 1.2,
     ease: "expo.out",
-    delay: 0.3,  // Faster start
+    delay: 0.3,
 })
     .fromTo(
         ".nav-btn .lang",
